@@ -1,6 +1,6 @@
 ---
 title: "Project 1"
-author: "GROUP MEMBERS"
+author: "Ashvin Narayan, Yash Patel, Tanay Pingle"
 output: html_document
 ---
 
@@ -29,12 +29,27 @@ Your job in this project falls into two categories:
     * Call the first table `daily`: "./data/natural_gas_germany_daily.csv"
     * Call the second table `gas`: "./data/dutch_ttf_natural_gas.csv". Be sure to properly import the `Date` column.
     * Demonstrate that these have been loaded by showing the number of rows and columns in each table.
-  
+    
+```{r task1}
+daily <- read_csv("./data/natural_gas_germany_daily.csv",
+                  show_col_types = FALSE)
+
+gas <- read_csv("./data/dutch_ttf_natural_gas.csv",
+                col_types = cols(col_date("%m/%d/%Y")),
+                show_col_types = FALSE)
+
+# Print number of rows and columns
+cat("Rows and columns in 'daily': ", nrow(daily), ", ", ncol(daily), '\n', sep = "")
+cat("Rows and columns in 'gas': ", nrow(gas), ", ", ncol(gas), sep = "")
+```
 
 ### Task 2
 
 * The data in `daily` are collected over days, with information on different types of natural gas consumption (`consumption_small`, `consumption_industry`, `consumption_power`). Provide summaries of typical values for each of these three types of consumption.
 
+```{r task2}
+
+```
 
 ### Task 3
 
@@ -44,6 +59,10 @@ Answer some questions about the data in `daily`:
 * What is the percentage change in the `consumption_*` variables (that is the last day minus the first day divided by the first day)?
 * What proportion of the days are marked as holidays?
 * For each month in each year, what was the year-month combination with the lowest median `consumption_power` value?
+
+```{r task3}
+
+```
    
 ### Task 4
 
